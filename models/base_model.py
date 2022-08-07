@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Module for Base class
-Contains the Base class for the AirBnB clone console.
+"""BaseModel: A module that defines all common attributes
+and methods for all other classes in this project
 """
 
 import uuid
@@ -10,7 +10,7 @@ from models import storage
 
 class BaseModel:
 
-    """Class for base model of object hierarchy."""
+    """Class for base model of all bjects"""
 
     def __init__(self, *args, **kwargs):
         """Initialization of a Base instance.
