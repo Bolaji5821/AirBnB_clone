@@ -2,9 +2,9 @@
 """
 storage module to manage serialization and deserialization of JSON format.
 """
-
 import json
 import os
+
 
 class FileStorage:
     """A class  that serializes instances to a JSON file and deserializes JSON
@@ -35,9 +35,10 @@ class FileStorage:
             for k, v in self.__objects.items():
                 dict_storage[k] = v.to_dict()
             json.dump(dict_storage, f)
+
     def reload(self):
         """Deserializes JSON file into __objects."""
-        from models.base_model import BaseModel
+
         if not os.path.isfile(FileStorage.__file_path):
             return
         with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
