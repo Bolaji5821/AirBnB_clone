@@ -30,4 +30,16 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """ Empty line should not excute anything """
         return False
+    
+    def do_create(self, _input_class_name):
+        """ creates new instance of BaseModel in JSON """
+        if not _input_class_name:
+            print("** class name missing **")
+	    return
+        if _input_class_name not in classes_dic.keys():
+            print("** class doesnt exist **")
+	    return
+        newinstance = classes.dic[_input_class_name]()
+        newinstance.save()
+        print(newinstance.id)
 
